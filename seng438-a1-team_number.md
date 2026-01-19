@@ -2,12 +2,13 @@
 
 **Lab. Report \#1 – Introduction to Testing and Defect Tracking**
 
-| Group: Group Number      |
+| Group: 9      |
 |-----------------|
-| Student 1 name                |   
-| Student 2 name              |   
-| Student 3 name               |   
-| Student 4 name                |   
+| Amielle El Makhzoumi           |   
+| Fatma Alzubaidi              |   
+| Josral Frederick               |   
+| Faris Janjua                |   
+| Temi Olubadejo                |  
 
 
 **Table of Contents**
@@ -37,6 +38,20 @@ An introduction of your lab work, and what you knew about exploratory and manual
 functional testing before this lab
 
 # High-level description of the exploratory testing plan
+
+Requirements based on Appendix B:
+- Withdrawals must be in multiples of $20
+- ATM should reject insufficient funds
+- Cancel should work at many stages
+- 3 wrong PINs → card retained
+- Deposit requires envelope insertion
+- Deposit is not credited if envelope isn’t inserted
+- ATM must not shut down during a customer session
+- Receipt must be printed for successful transactions
+- ATM logs actions (no PINs in logs)
+
+High-level plan:
+Based on the requirements outlined in Appendix B, our exploratory testing focused on verifying core ATM functionalities such as authentication, withdrawals, deposits, transfers, balance inquiries, and system control operations. We aimed to broadly test most system features rather than exhaustively testing a single function. Test scenarios were derived from both normal user flows (e.g., valid login followed by a withdrawal or deposit) and exceptional cases (e.g., invalid PIN entries, insufficient account balance, canceling transactions at various stages, and attempting invalid withdrawal amounts). Boundary conditions such as withdrawing the maximum available cash, performing multiple transactions in one session, and system shutdown behavior were also explored. Testing was conducted without predefined scripts to allow unexpected behaviors and defects to be discovered naturally.
 
 Text…
 
