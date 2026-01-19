@@ -40,15 +40,18 @@ functional testing before this lab
 # High-level description of the exploratory testing plan
 
 Requirements based on Appendix B:
-- Withdrawals must be in multiples of $20
+- Withdrawals must be in multiples of $20 - will not allow decimals, must be and integer
 - ATM should reject insufficient funds
 - Cancel should work at many stages
-- 3 wrong PINs → card retained
+- 3 wrong PINs → card retained - will display "card has been retained" and reprompt to insert card
 - Deposit requires envelope insertion
 - Deposit is not credited if envelope isn’t inserted
 - ATM must not shut down during a customer session
 - Receipt must be printed for successful transactions
 - ATM logs actions (no PINs in logs)
+- 4 number PIN - actually allows 22 numbers
+- No letters in card number - working
+- Entering PIN - Will display a blank green page when using random card number, and a long PIN. blank screen, cant go back, cant clear
 
 High-level plan:
 Based on the requirements outlined in Appendix B, our exploratory testing focused on verifying core ATM functionalities such as authentication, withdrawals, deposits, transfers, balance inquiries, and system control operations. We aimed to broadly test most system features rather than exhaustively testing a single function. Test scenarios were derived from both normal user flows (e.g., valid login followed by a withdrawal or deposit) and exceptional cases (e.g., invalid PIN entries, insufficient account balance, canceling transactions at various stages, and attempting invalid withdrawal amounts). Boundary conditions such as withdrawing the maximum available cash, performing multiple transactions in one session, and system shutdown behavior were also explored. Testing was conducted without predefined scripts to allow unexpected behaviors and defects to be discovered naturally.
