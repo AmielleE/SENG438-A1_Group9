@@ -34,8 +34,7 @@ learned	1](#_Toc439194682)
 
 # Introduction
 
-An introduction of your lab work, and what you knew about exploratory and manual
-functional testing before this lab
+In this lab, the primary focus is to get an idea of what software testing is. Software testing is a critical practice used in software development, as it helps to ensure that systems behave as expected and meet their requirements. Before this lab, our understanding of testing was mainly focused on the idea of verifying correctness through pre defined test cases. However, this lab provided a hands-on experience with multiple testing styles. This includes exploratory testing, manual scripted testing and regression testing by using a simulated ATM system.
 
 # High-level description of the exploratory testing plan
 
@@ -71,7 +70,7 @@ Text…
 
 # How the pair testing was managed and team work/effort was divided 
 
-Text…
+- Fatma and Amielle were assigned to work on the first pair testing for Appendix B. Fatma was testing the different scenerios that would not work and Amielle would do the recording.
 
 # Difficulties encountered, challenges overcome, and lessons learned
 
