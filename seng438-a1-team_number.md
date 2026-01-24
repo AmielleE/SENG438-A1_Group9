@@ -38,30 +38,30 @@ In this lab, the primary focus is to get an idea of what software testing is. So
 
 # High-level description of the exploratory testing plan
 
-Requirements based on Appendix B:
+Requirements based on Appendix B: (this is version 1.0)
 - Withdrawals must be in multiples of $20 - will not allow decimals, must be and integer
-- ATM should reject insufficient funds
-- Cancel should work at many stages
+- ATM should reject insufficient funds -  DEFECT. Withdrawing money, the $200 option gives $20
+- Cancel should work at many stages - 
 - 3 wrong PINs → card retained - will display "card has been retained" and reprompt to insert card
-- Deposit requires envelope insertion
-- Deposit is not credited if envelope isn’t inserted
-- ATM must not shut down during a customer session
-- Receipt must be printed for successful transactions
-- ATM logs actions (no PINs in logs)
+- Deposit requires envelope insertion - It works.
+- Deposit is not credited if envelope isn’t inserted - It works.
+- ATM must not shut down during a customer session - it has not shut down so far.
+- Receipt must be printed for successful transactions - Yes, it does that.
+- ATM logs actions (no PINs in logs) - No pins in logs
 - 4 number PIN - actually allows 22 numbers - DEFECT
 - No letters in card number - working
 - Entering PIN - Will display a blank green page when using random card number, and a long PIN. blank screen, cant go back, cant clear - DEFECT
 
-1. Inserting a false card (entering non-numerical values or random numbers)
-2. Entering an random/incorrect PINs
-3. Checking to see if the chosen withdraw amount the same as the actual amount
-4. Checking to see if the chosen withdraw amount is the amount deducted from the account
-5. Trying to withdraw money from a unavailable account (Money Market for Card 1 and Savings for Card 2) 
-6. Trying to withdraw more money than you have in the account
-7. Checking to see if the chosen deposit amount is accurately reflected in the balance
-8. Checking to see what happens if a unrealistic deposit amount is entered
-9. Checking to see if the amount transferred from one account to another is accurate
-10. Checking to see if you could transfer money from an unavailable account to an available account
+1. Inserting a false card (entering non-numerical values or random numbers) - Both work
+2. Entering an random/incorrect PINs - Theres no defect when done right..
+3. Checking to see if the chosen withdraw amount the same as the actual amount - DEFECT, The balance is increasing but the available number isnt.
+4. Checking to see if the chosen withdraw amount is the amount deducted from the account - DEFECT - It takes back the correct amount from the balance, but the numbers don't correlate with the ones that are put in.
+5. Trying to withdraw money from a unavailable account (Money Market for Card 1 and Savings for Card 2)  - It works
+6. Trying to withdraw more money than you have in the account - it works
+7. Checking to see if the chosen deposit amount is accurately reflected in the balance -DEFECT -  it only deposits into the total balance but not the available, also the math is wrong, its always $10 less than what you put.
+8. Checking to see what happens if a unrealistic deposit amount is entered -DEFECT -  Blank screen appears and the whole system crashes. 
+9. Checking to see if the amount transferred from one account to another is accurate - DEFECT -  it's not accurate, it always takes $.50 less than what you put in.
+10. Checking to see if you could transfer money from an unavailable account to an available account - it works 
 
 High-level plan:
 Based on the requirements outlined in Appendix B, our exploratory testing focused on verifying core ATM functionalities such as authentication, withdrawals, deposits, transfers, balance inquiries, and system control operations. We aimed to broadly test most system features rather than exhaustively testing a single function. Test scenarios were derived from both normal user flows (e.g., valid login followed by a withdrawal or deposit) and exceptional cases (e.g., invalid PIN entries, insufficient account balance, canceling transactions at various stages, and attempting invalid withdrawal amounts). Boundary conditions such as withdrawing the maximum available cash, performing multiple transactions in one session, and system shutdown behavior were also explored. Testing was conducted without predefined scripts to allow unexpected behaviors and defects to be discovered naturally.
@@ -69,11 +69,58 @@ Based on the requirements outlined in Appendix B, our exploratory testing focuse
 Text…
 
 # Comparison of exploratory and manual functional testing
+Manual functional test case #: (this is version 1.0)
+1. it works
+2. it works
+3. it works
+4. it works
+5. it works
+6. DEFECT, because tested card 80 is asking for PIN, and not ejecting card right away. (100 is accepted 7987498729 is not.)
+7. it works
+8. it works (some transaction are not correct but it still does the transaction)
+9. it works
+10. it works
+11. it works (says PIN is incorrect)
+12. it works
+13. it works 
+14. DEFECT (repeated from earlier where you enter $20 and its $40)
+15. it works
+16. 
+17. it works
+18. it works
+19.it works
+20. it works
+21. it works 
+22. it works
+23. it works 
+24. it works 
+25. it works 
+26. it works
+27. it works
+28. it works
+29. DEFECT (it adds .38 to original amount but everything else is good)
+30.it works
+31. it works
+32. it works
+33. it works
+34. it works 
+35. it works
+36. DEFECT (prompts user twice, ask if it counts as defect)
+37. it works 
+38. it works 
+39. MINI DEFECT (promt twice)
+40. MINI DEFECT (same as 39)
 
-Text…
+
+
 
 -   Note that you need to submit a report generated by your defect tracking
     system, containing all defects recorded in the system.
+
+# regretion testing
+
+ 
+
 
 # Notes and discussion of the peer reviews of defect reports
 
