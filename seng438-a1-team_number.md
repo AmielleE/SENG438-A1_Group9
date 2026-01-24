@@ -8,7 +8,7 @@
 | Fatma Alzubaidi              |   
 | Josral Frederick               |   
 | Faris Janjua                |   
-| Temi Olubadejo                |  
+| Erioluwa Olubadejo                |  
 
 
 **Table of Contents**
