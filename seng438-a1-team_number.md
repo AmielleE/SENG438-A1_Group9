@@ -48,9 +48,20 @@ Requirements based on Appendix B:
 - ATM must not shut down during a customer session
 - Receipt must be printed for successful transactions
 - ATM logs actions (no PINs in logs)
-- 4 number PIN - actually allows 22 numbers
+- 4 number PIN - actually allows 22 numbers - DEFECT
 - No letters in card number - working
-- Entering PIN - Will display a blank green page when using random card number, and a long PIN. blank screen, cant go back, cant clear
+- Entering PIN - Will display a blank green page when using random card number, and a long PIN. blank screen, cant go back, cant clear - DEFECT
+
+1. Inserting a false card (entering non-numerical values or random numbers)
+2. Entering an random/incorrect PINs
+3. Checking to see if the chosen withdraw amount the same as the actual amount
+4. Checking to see if the chosen withdraw amount is the amount deducted from the account
+5. Trying to withdraw money from a unavailable account (Money Market for Card 1 and Savings for Card 2) 
+6. Trying to withdraw more money than you have in the account
+7. Checking to see if the chosen deposit amount is accurately reflected in the balance
+8. Checking to see what happens if a unrealistic deposit amount is entered
+9. Checking to see if the amount transferred from one account to another is accurate
+10. Checking to see if you could transfer money from an unavailable account to an available account
 
 High-level plan:
 Based on the requirements outlined in Appendix B, our exploratory testing focused on verifying core ATM functionalities such as authentication, withdrawals, deposits, transfers, balance inquiries, and system control operations. We aimed to broadly test most system features rather than exhaustively testing a single function. Test scenarios were derived from both normal user flows (e.g., valid login followed by a withdrawal or deposit) and exceptional cases (e.g., invalid PIN entries, insufficient account balance, canceling transactions at various stages, and attempting invalid withdrawal amounts). Boundary conditions such as withdrawing the maximum available cash, performing multiple transactions in one session, and system shutdown behavior were also explored. Testing was conducted without predefined scripts to allow unexpected behaviors and defects to be discovered naturally.
