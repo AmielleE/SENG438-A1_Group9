@@ -69,7 +69,7 @@ version 1.1:
 1. ATM should reject insufficient funds - defect solved
 2. 4 number PIN - DEFECT in progress
 3. Entering PIN - Will display a blank green page when using random card number, and a long PIN. blank screen, cant go back, cant clear - DEFECT IN PROGRESS
-4.Checking to see if the chosen withdraw amount is the amount deducted from the account- DEFECT IN PROGRESS
+4.Checking to see if the chosen withdraw amount is the amount deducted from the account- DEFECT RESOLVED
 5.Checking to see if the chosen deposit amount is accurately reflected in the balance  - DEFECT IN PROGRSS (.10 less in savings and checking)
 6.Checking to see what happens if a unrealistic deposit amount is entered - DEFECT IN PROGRESS
 7.Checking to see if the amount transferred from one account to another is accurate - SOLVED
@@ -133,7 +133,7 @@ Manual functional test case #: (this is version 1.0)
 12. it works 
 13. it works
 14. it works 
-15. DEFECT (wont bring back to the actual screen)
+15. it works
 16. 
 17. it works
 18. it works 
