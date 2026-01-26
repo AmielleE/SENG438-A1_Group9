@@ -40,7 +40,7 @@ In this lab, the primary focus is to get an idea of what software testing is. So
 
 Requirements based on Appendix B: (this is version 1.0)
 - Withdrawals must be in multiples of $20 - will not allow decimals, must be and integer
-- Cancel should work at many stages - 
+- Cancel should work at many stages - works
 - 3 wrong PINs → card retained - will display "card has been retained" and reprompt to insert card
 - Deposit requires envelope insertion - It works.
 - Deposit is not credited if envelope isn’t inserted - It works.
@@ -58,7 +58,7 @@ Requirements based on Appendix B: (this is version 1.0)
 5. Trying to withdraw money from a unavailable account (Money Market for Card 1 and Savings for Card 2)  - It works
 6. Trying to withdraw more money than you have in the account - it works
 7. Checking to see if the chosen deposit amount is accurately reflected in the balance -DEFECT -  it only deposits into the total balance but not the available, also the math is wrong, its always $10 less than what you put.
-8. Checking to see what happens if a unrealistic deposit amount is entered -DEFECT -  Blank screen appears and the whole system crashes. 
+8. Checking to see what happens if an unrealistic deposit amount is entered -DEFECT -  Blank screen appears and the whole system crashes. 
 9. Checking to see if the amount transferred from one account to another is accurate - DEFECT -  it's not accurate, it always takes $.50 less than what you put in.
 10. Checking to see if you could transfer money from an unavailable account to an available account - it works 
 
@@ -105,7 +105,7 @@ Manual functional test case #: (this is version 1.0)
 26. it works
 27. it works
 28. it works
-29. DEFECT (it adds .38 to original amount but everything else is good)
+29. DEFECT (same as earlier, it adds .38 to original amount but everything else is good)
 30.it works
 31. it works
 32. it works
