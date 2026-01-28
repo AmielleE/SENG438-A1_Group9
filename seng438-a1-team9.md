@@ -312,7 +312,9 @@ version 1.1:
 
 # Notes and discussion of the peer reviews of defect reports
 
-Text…
+During the peer review process, each pair(one group of two & one group of three) evaluated another group’s defect report and provided structured feedback. The reviews focused on clarity, completeness, reproducibility of defects, and adherence to the defect report template. One key discussion point was the importance of clearly defined steps to reproduce a defect, as several reports initially lacked sufficient detail to consistently trigger the issue. 
+We also discussed how well each report distinguished between expected and actual behavior, noting that stronger reports made this distinction explicit and concise. 
+Through discussion, we compared approaches to severity and priority classification and aligned on a more consistent interpretation across the group. Overall, the peer review process helped identify common weaknesses and reinforced best practices for writing high-quality, actionable defect reports.
 
 # How the pair testing was managed and team work/effort was divided 
 
@@ -320,5 +322,6 @@ Text…
 
 # Difficulties encountered, challenges overcome, and lessons learned
 # Comments/feedback on the lab and lab document itself
+Overall, the lab was a useful and practical exercise that reinforced real-world software testing and quality assurance practices. The lab document was generally clear and well-structured, making it easy to follow the required steps. The peer review component was particularly valuable, as it encouraged critical thinking and exposed us to different reporting styles.
 
-Text…
+One possible improvement would be to include a sample defect report or rubric for better ease in understanding the content, as it took a while to fully understand the objectives and how to meet theme. Despite this, the lab provided meaningful hand- experience and effectively met its learning objectives.
