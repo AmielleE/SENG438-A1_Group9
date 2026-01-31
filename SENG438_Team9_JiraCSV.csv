@@ -1,0 +1,313 @@
+Summary,Issue key,Issue id,Issue Type,Status,Project key,Project name,Project type,Project lead,Project lead id,Project description,Priority,Resolution,Assignee,Assignee Id,Reporter,Reporter Id,Creator,Creator Id,Created,Updated,Last Viewed,Resolved,Due date,Votes,Description,Environment,Watchers,Watchers Id,Original estimate,Remaining Estimate,Time Spent,Work Ratio,Σ Original Estimate,Σ Remaining Estimate,Σ Time Spent,Security Level,Attachment,Custom field (Actual end),Custom field (Actual start),Custom field (Approvals),Custom field (Change reason),Custom field (Change risk),Custom field (Change type),Custom field (Development),Custom field (Epic Color),Custom field (Epic Name),Custom field (Epic Status),Custom field (Focus Areas),Custom field (Goals),Custom field (Impact),Custom field (Issue color),Custom field (Locked forms),Custom field (Open forms),Custom field (Project overview key),Custom field (Project overview status),Custom field (Rank),Custom field (Request Type),Custom field (Sentiment),Custom field (Start date),Custom field (Story Points),Custom field (Story point estimate),Custom field (Submitted forms),Custom field (Target end),Custom field (Target start),Custom field (Team),Custom field (Total forms),Custom field (Vulnerability),Custom field ([CHART] Date of First Response),Custom field ([CHART] Time in Status),Status Category,Status Category Changed
+Another Transaction (v1.1),S4P1-30,10107,Bug,Done,S4P1,SENG 438 - Project 1 ,software,Josral Frederick,712020:8a1b04dd-1c57-49b8-a118-0fe2641cff3f,,Medium,Done,,,Amielle El Makhzoumi,712020:a4ddc1ff-15ef-454c-8cf7-124eb02af1ea,Amielle El Makhzoumi,712020:a4ddc1ff-15ef-454c-8cf7-124eb02af1ea,29/Jan/26 5:11 PM,29/Jan/26 5:14 PM,29/Jan/26 5:13 PM,29/Jan/26 5:12 PM,,0,"!image-20260130-001421.png|width=519,alt=""image-20260130-001421.png""!
+
+Application version 1.1
+
+Function Tested : “Would you like to do another transaction?”
+
+The initial state of the system : system asking for if user wants to continue to make another transaction
+
+Details to reproduce the defect ; insert card, enter valid card number, enter valid pin, select any transaction type, perform it fully
+
+The expected outcome ;  System should display “Would you like to do another transaction?”
+
+The actual outcome ;  System displays “Wood you like to do another transaction?”, with a spelling mistake on the word “Wood/Would”
+
+
+
+RESOLVED IN V1.1",,Amielle El Makhzoumi,712020:a4ddc1ff-15ef-454c-8cf7-124eb02af1ea,,,,,,,,,29/Jan/26 5:14 PM;ug:17043ae3-75de-4ff9-8aee-8832a27d4bed;image-20260130-001421.png;https://josralfrederick.atlassian.net/rest/api/3/attachment/content/10053,,,com.atlassian.servicedesk.plugins.approvals.internal.customfield.ApprovalsCFValue@191cea85,,,,{},,,,,,,,,,,,0|i0008n:,,,,,,,,,,,,,10040_*:*_1_*:*_54955_*|*_10042_*:*_1_*:*_0,Done,29/Jan/26 5:12 PM
+Another Transaction (v1.0),S4P1-29,10106,Bug,To Do,S4P1,SENG 438 - Project 1 ,software,Josral Frederick,712020:8a1b04dd-1c57-49b8-a118-0fe2641cff3f,,Medium,,,,Amielle El Makhzoumi,712020:a4ddc1ff-15ef-454c-8cf7-124eb02af1ea,Amielle El Makhzoumi,712020:a4ddc1ff-15ef-454c-8cf7-124eb02af1ea,29/Jan/26 5:07 PM,29/Jan/26 5:11 PM,29/Jan/26 5:08 PM,,,0,"!b2ccb238-ecf7-4536-af35-32367f357ef4.png|width=519,alt=""b2ccb238-ecf7-4536-af35-32367f357ef4.png""!
+
+Application version 1.0
+
+Function Tested : “Would you like to do another transaction?”
+
+The initial state of the system : system asking for if user wants to continue to make another transaction
+
+Details to reproduce the defect ; insert card, enter valid card number, enter valid pin, select any transaction type, perform it fully
+
+The expected outcome ;  System should display “Would you like to do another transaction?”
+
+The actual outcome ;  System displays “Wood you like to do another transaction?”, with a spelling mistake on the word “Wood/Would”",,Amielle El Makhzoumi,712020:a4ddc1ff-15ef-454c-8cf7-124eb02af1ea,,,,,,,,,29/Jan/26 5:11 PM;ug:17043ae3-75de-4ff9-8aee-8832a27d4bed;b2ccb238-ecf7-4536-af35-32367f357ef4.png;https://josralfrederick.atlassian.net/rest/api/3/attachment/content/10050,,,com.atlassian.servicedesk.plugins.approvals.internal.customfield.ApprovalsCFValue@53534be6,,,,{},,,,,,,,,,,,0|i0008f:,,,,,,,,,,,,,,To Do,29/Jan/26 5:07 PM
+Card Number Verification (v1.1),S4P1-28,10073,Bug,In Progress,S4P1,SENG 438 - Project 1 ,software,Josral Frederick,712020:8a1b04dd-1c57-49b8-a118-0fe2641cff3f,,Medium,,,,Amielle El Makhzoumi,712020:a4ddc1ff-15ef-454c-8cf7-124eb02af1ea,Amielle El Makhzoumi,712020:a4ddc1ff-15ef-454c-8cf7-124eb02af1ea,26/Jan/26 9:30 AM,26/Jan/26 9:48 AM,26/Jan/26 9:48 AM,,,0,"Application version 1.1
+
+Function Tested : Card number verification 
+The initial state of the system : system asking valid credit card number in idle
+
+Details to reproduce the defect ; insert card, enter random card number
+
+The expected outcome ;  System should automatically eject an invalid card 
+
+The actual outcome ;  System automatically asks for pin entry despite having uninitialized card details 
+
+!Screenshot 2026-01-26 at 2.27.52 AM.png|width=833,alt=""Screenshot 2026-01-26 at 2.27.52 AM.png""!",,Amielle El Makhzoumi,712020:a4ddc1ff-15ef-454c-8cf7-124eb02af1ea,,,,,,,,,26/Jan/26 9:30 AM;ug:17043ae3-75de-4ff9-8aee-8832a27d4bed;Screenshot 2026-01-26 at 2.27.52 AM.png;https://josralfrederick.atlassian.net/rest/api/3/attachment/content/10016,,,com.atlassian.servicedesk.plugins.approvals.internal.customfield.ApprovalsCFValue@57e87831,,,,{},,,,,,,,,,,,0|i00087:,,,,,,,,,,,,,,In Progress,26/Jan/26 9:48 AM
+Account Transfers (v1.1),S4P1-27,10072,Bug,Done,S4P1,SENG 438 - Project 1 ,software,Josral Frederick,712020:8a1b04dd-1c57-49b8-a118-0fe2641cff3f,,Medium,Done,,,Amielle El Makhzoumi,712020:a4ddc1ff-15ef-454c-8cf7-124eb02af1ea,Amielle El Makhzoumi,712020:a4ddc1ff-15ef-454c-8cf7-124eb02af1ea,26/Jan/26 9:25 AM,26/Jan/26 9:26 AM,29/Jan/26 5:08 PM,26/Jan/26 9:26 AM,,0,"Application version 1.1
+
+Function Tested : Account Transfers 
+The initial state of the system : system asking for transfer amount in idle
+
+Details to reproduce the defect ; insert card, enter valid card number, enter valid pin, select (3) (transfers), select from (1) (checking), select to (2) savings, select 20$ for the amount, click enter 
+
+The expected outcome ;  System should display a balance increase of 20$ to desired account 
+
+The actual outcome ;  System displays an account balance increase of 19.50$
+
+!Screenshot 2026-01-26 at 2.19.54 AM.png|width=833,alt=""Screenshot 2026-01-26 at 2.19.54 AM.png""!
+
+RESOLVED IN V1.1",,Amielle El Makhzoumi,712020:a4ddc1ff-15ef-454c-8cf7-124eb02af1ea,,,,,,,,,26/Jan/26 9:26 AM;ug:17043ae3-75de-4ff9-8aee-8832a27d4bed;Screenshot 2026-01-26 at 2.19.54 AM.png;https://josralfrederick.atlassian.net/rest/api/3/attachment/content/10015,,,com.atlassian.servicedesk.plugins.approvals.internal.customfield.ApprovalsCFValue@11f538ef,,,,{},,,,,,,,,,,,0|i0007z:,,,,,,,,,,,,,10040_*:*_1_*:*_23106_*|*_10042_*:*_1_*:*_0,Done,26/Jan/26 9:26 AM
+Withdraw Money (v1.1),S4P1-25,10070,Bug,Done,S4P1,SENG 438 - Project 1 ,software,Josral Frederick,712020:8a1b04dd-1c57-49b8-a118-0fe2641cff3f,,Medium,Done,,,Amielle El Makhzoumi,712020:a4ddc1ff-15ef-454c-8cf7-124eb02af1ea,Amielle El Makhzoumi,712020:a4ddc1ff-15ef-454c-8cf7-124eb02af1ea,26/Jan/26 9:21 AM,29/Jan/26 5:12 PM,29/Jan/26 5:12 PM,26/Jan/26 9:22 AM,,0,"Application version 1.1
+
+Function Tested : Withdrawing money from account
+The initial state of the system :  Main page, idle waiting for input 
+
+Details to reproduce the defect ; Turn on system, enter a card, enter valid card number, enter valid pin, select withdraw (1), 
+select an amount.
+
+The expected outcome ;  System should display a receipts stating a account balance decrease of the amount selected above and withdraw amount should equal money received
+
+The actual outcome ;  System displays a correct account balance but the amount withdrawn is 20$ over expected value. RESOLVED
+
+!Screenshot 2026-01-26 at 9.04.31 AM.png|width=776,alt=""Screenshot 2026-01-26 at 9.04.31 AM.png""!
+
+
+
+[https://www.loom.com/share/dd7564c85402486e80b881c5b0bd936f|https://www.loom.com/share/dd7564c85402486e80b881c5b0bd936f|smart-embed]",,Amielle El Makhzoumi,712020:a4ddc1ff-15ef-454c-8cf7-124eb02af1ea,,,,,,,,,29/Jan/26 5:12 PM;ug:17043ae3-75de-4ff9-8aee-8832a27d4bed;Screenshot 2026-01-26 at 9.04.31 AM.png;https://josralfrederick.atlassian.net/rest/api/3/attachment/content/10052,,,com.atlassian.servicedesk.plugins.approvals.internal.customfield.ApprovalsCFValue@6b883bca,,,,{},,,,,,,,,,,,0|i0007r:,,,,,,,,,,,,,10040_*:*_1_*:*_55157_*|*_10042_*:*_1_*:*_0,Done,26/Jan/26 9:22 AM
+Test Case 40: Correct re-entry of PIN on the third try is accepted (v 1.1) ,S4P1-23,10068,Bug,In Progress,S4P1,SENG 438 - Project 1 ,software,Josral Frederick,712020:8a1b04dd-1c57-49b8-a118-0fe2641cff3f,,Medium,,,,Amielle El Makhzoumi,712020:a4ddc1ff-15ef-454c-8cf7-124eb02af1ea,Amielle El Makhzoumi,712020:a4ddc1ff-15ef-454c-8cf7-124eb02af1ea,26/Jan/26 9:09 AM,26/Jan/26 9:20 AM,26/Jan/26 9:15 AM,,,0,"Manual scripted tests
+
+Application version 1.1
+
+MFT
+
+Function Tested : Correct re-entry of PIN on the third try is accepted
+The initial state of the system : Request to re-enter PIN is being displayed
+
+Details to reproduce the defect ; insert card, enter valid card number, enter incorrect pin twice then correct pin on the third attempt
+
+The expected outcome ;  System should automatically accept correct pin on third attempt
+
+The actual outcome ;  System ask for correct pin twice",,Amielle El Makhzoumi,712020:a4ddc1ff-15ef-454c-8cf7-124eb02af1ea,,,,,,,,,,,,com.atlassian.servicedesk.plugins.approvals.internal.customfield.ApprovalsCFValue@1d773d43,,,,{},,,,,,,,,,,,0|i0007j:,,,,,,,,,,,,,,In Progress,26/Jan/26 9:20 AM
+Test Case 39 : Correct re-entry of PIN on the second try is accepted (v1.1) ,S4P1-22,10067,Bug,In Progress,S4P1,SENG 438 - Project 1 ,software,Josral Frederick,712020:8a1b04dd-1c57-49b8-a118-0fe2641cff3f,,Medium,,,,Amielle El Makhzoumi,712020:a4ddc1ff-15ef-454c-8cf7-124eb02af1ea,Amielle El Makhzoumi,712020:a4ddc1ff-15ef-454c-8cf7-124eb02af1ea,26/Jan/26 9:09 AM,26/Jan/26 9:27 AM,26/Jan/26 9:15 AM,,,0,"Manual scripted tests
+
+Application version 1.1
+
+MFT
+
+Function Tested : Correct re-entry of PIN on the second try is accepted
+The initial state of the system : Request to re-enter PIN is being displayed
+
+Details to reproduce the defect ; insert card, enter valid card number, enter incorrect pin once then correct pin on the second attempt
+
+The expected outcome ;  System should automatically accept correct pin on second attempt
+
+The actual outcome ;  System ask for correct pin twice",,Amielle El Makhzoumi,712020:a4ddc1ff-15ef-454c-8cf7-124eb02af1ea,,,,,,,,,,,,com.atlassian.servicedesk.plugins.approvals.internal.customfield.ApprovalsCFValue@2b24bd28,,,,{},,,,,,,,,,,,0|i0007b:,,,,,,,,,,,,,,In Progress,26/Jan/26 9:20 AM
+Test Case 37: Correct re-entry of PIN is accepted (v1.1),S4P1-21,10066,Bug,In Progress,S4P1,SENG 438 - Project 1 ,software,Josral Frederick,712020:8a1b04dd-1c57-49b8-a118-0fe2641cff3f,,Medium,,,,Amielle El Makhzoumi,712020:a4ddc1ff-15ef-454c-8cf7-124eb02af1ea,Amielle El Makhzoumi,712020:a4ddc1ff-15ef-454c-8cf7-124eb02af1ea,26/Jan/26 9:09 AM,26/Jan/26 9:20 AM,26/Jan/26 9:10 AM,,,0,"Manual scripted tests
+
+Application version 1.1
+
+MFT
+
+Function Tested : Correct re-entry of PIN on the first attempt is accepted
+The initial state of the system : Request to re-enter PIN is being displayed
+
+Details to reproduce the defect ; insert card, enter valid card number, enter incorrect pin once then correct pin on the first attempt
+
+The expected outcome ;  System should automatically accept correct pin on first attempt
+
+The actual outcome ;  System ask for correct pin twice",,Amielle El Makhzoumi,712020:a4ddc1ff-15ef-454c-8cf7-124eb02af1ea,,,,,,,,,,,,com.atlassian.servicedesk.plugins.approvals.internal.customfield.ApprovalsCFValue@78a1b580,,,,{},,,,,,,,,,,,0|i00073:,,,,,,,,,,,,,,In Progress,26/Jan/26 9:20 AM
+Withdraw Money (v1.0) ,S4P1-17,10061,Bug,To Do,S4P1,SENG 438 - Project 1 ,software,Josral Frederick,712020:8a1b04dd-1c57-49b8-a118-0fe2641cff3f,,Medium,,,,Josral Frederick,712020:8a1b04dd-1c57-49b8-a118-0fe2641cff3f,Josral Frederick,712020:8a1b04dd-1c57-49b8-a118-0fe2641cff3f,26/Jan/26 8:43 AM,26/Jan/26 9:21 AM,26/Jan/26 9:20 AM,,,0,"Application version 1.0
+
+Function Tested : Withdrawing money from account
+The initial state of the system :  Main page, idle waiting for input 
+
+Details to reproduce the defect ; Turn on system, enter a card, enter valid card number, enter valid pin, select withdraw (1), 
+select an amount.
+
+The expected outcome ;  System should display a receipts stating a account balance decrease of the amount selected above and withdraw amount should equal money received
+
+The actual outcome ;  System displays a correct account balance but the amount withdrawn is 20$ over expected value.
+
+!Screenshot 2026-01-26 at 9.04.31 AM.png|width=776,alt=""Screenshot 2026-01-26 at 9.04.31 AM.png""!
+
+
+
+[https://www.loom.com/share/dd7564c85402486e80b881c5b0bd936f|https://www.loom.com/share/dd7564c85402486e80b881c5b0bd936f|smart-embed]",,Josral Frederick,712020:8a1b04dd-1c57-49b8-a118-0fe2641cff3f,,,,,,,,,26/Jan/26 9:04 AM;e5a33aac-0694-4644-9842-145dc29fb7c1;Screenshot 2026-01-26 at 9.04.31 AM.png;https://josralfrederick.atlassian.net/rest/api/3/attachment/content/10014,,,com.atlassian.servicedesk.plugins.approvals.internal.customfield.ApprovalsCFValue@3cda5e95,,,,{},,,,,,,,,,,,0|i00067:,,,,,,,,,,,,,,To Do,26/Jan/26 8:43 AM
+Deposit Unrealistic Amount (v1.1) ,S4P1-14,10058,Bug,In Progress,S4P1,SENG 438 - Project 1 ,software,Josral Frederick,712020:8a1b04dd-1c57-49b8-a118-0fe2641cff3f,,Medium,,,,Josral Frederick,712020:8a1b04dd-1c57-49b8-a118-0fe2641cff3f,Josral Frederick,712020:8a1b04dd-1c57-49b8-a118-0fe2641cff3f,26/Jan/26 4:32 AM,26/Jan/26 8:52 AM,29/Jan/26 4:58 PM,,,0,"Application version 1.1
+
+Function Tested : Deposit Amount
+The initial state of the system : system asking for deposit amount
+
+Details to reproduce the defect ; insert card, enter valid card number, enter valid pin, select (2) (deposit), select (1) (checking), select a deposit amount ie: any number greater than 10 digits 
+
+The expected outcome ;  System should display a receipts stating a account balance increased by the amount entered 
+
+The actual outcome ;  System crash and unresponsive, user cannot back out (get their money back) 
+
+
+
+!Screenshot 2026-01-26 at 4.38.43 AM.png|width=633,alt=""Screenshot 2026-01-26 at 4.38.43 AM.png""!
+
+
+
+[https://www.loom.com/share/46fe690942954a289d7ac93ba95b5f36|https://www.loom.com/share/46fe690942954a289d7ac93ba95b5f36|smart-embed]",,Josral Frederick,712020:8a1b04dd-1c57-49b8-a118-0fe2641cff3f,,,,,,,,,26/Jan/26 4:39 AM;e5a33aac-0694-4644-9842-145dc29fb7c1;Screenshot 2026-01-26 at 4.38.43 AM.png;https://josralfrederick.atlassian.net/rest/api/3/attachment/content/10013,,,com.atlassian.servicedesk.plugins.approvals.internal.customfield.ApprovalsCFValue@67ef6b8e,,,,{},,,,,,,,,,,,0|i0005r:,,,,,,,,,,,,,,In Progress,26/Jan/26 8:49 AM
+Deposit Amount (v1.1) ,S4P1-13,10057,Bug,In Progress,S4P1,SENG 438 - Project 1 ,software,Josral Frederick,712020:8a1b04dd-1c57-49b8-a118-0fe2641cff3f,,Medium,,,,Josral Frederick,712020:8a1b04dd-1c57-49b8-a118-0fe2641cff3f,Josral Frederick,712020:8a1b04dd-1c57-49b8-a118-0fe2641cff3f,26/Jan/26 4:20 AM,26/Jan/26 9:22 AM,26/Jan/26 9:22 AM,,,0,"Application version 1.1
+
+Defect still exists in version 1.1
+
+
+The initial state of the system : system asking for deposit amount
+
+Details to reproduce the defect ; insert card, enter valid card number, enter valid pin, select (2) (deposit), select (1) (checking), select 50$ for the amount, Click to insert envelope
+
+The expected outcome ;  System should display a receipts stating a account balance increase of 50$
+
+The actual outcome ;  System displays an account balance increase of 49.90$ and an available balance of 60$
+
+!Screenshot 2026-01-26 at 4.20.10 AM.png|width=313,alt=""Screenshot 2026-01-26 at 4.20.10 AM.png""!",,Josral Frederick,712020:8a1b04dd-1c57-49b8-a118-0fe2641cff3f,,,,,,,,,26/Jan/26 4:31 AM;e5a33aac-0694-4644-9842-145dc29fb7c1;Screenshot 2026-01-26 at 4.20.10 AM.png;https://josralfrederick.atlassian.net/rest/api/3/attachment/content/10012,,,com.atlassian.servicedesk.plugins.approvals.internal.customfield.ApprovalsCFValue@5fe515dc,,,,{},,,,,,,,,,,,0|i0005j:,,,,,,,,,,,,,,In Progress,26/Jan/26 8:36 AM
+Pin Insertion (v.1.1),S4P1-12,10056,Bug,In Progress,S4P1,SENG 438 - Project 1 ,software,Josral Frederick,712020:8a1b04dd-1c57-49b8-a118-0fe2641cff3f,,Medium,,,,Josral Frederick,712020:8a1b04dd-1c57-49b8-a118-0fe2641cff3f,Josral Frederick,712020:8a1b04dd-1c57-49b8-a118-0fe2641cff3f,26/Jan/26 4:07 AM,26/Jan/26 9:46 AM,26/Jan/26 9:46 AM,,,0,"Application version 1.1
+
+Function Tested : Pin insertion
+The initial state of the system : system is on and idle
+
+Details to reproduce the defect ; insert card, enter correct card number , enter a pin with digits exceeding 4. 
+
+The expected outcome ;  System should disallow user from entering numbers greater than 4 digits 
+
+The actual outcome ;  System allows for pin of up to 22 digits long 
+
+!Screenshot 2026-01-26 at 4.08.13 AM.png|width=313,alt=""Screenshot 2026-01-26 at 4.08.13 AM.png""!",,Josral Frederick,712020:8a1b04dd-1c57-49b8-a118-0fe2641cff3f,,,,,,,,,26/Jan/26 4:10 AM;e5a33aac-0694-4644-9842-145dc29fb7c1;Screenshot 2026-01-26 at 4.08.13 AM.png;https://josralfrederick.atlassian.net/rest/api/3/attachment/content/10011,,,com.atlassian.servicedesk.plugins.approvals.internal.customfield.ApprovalsCFValue@378b134c,,,,{},,,,,,,,,,,,0|i0005b:,,,,,,,,,,,,,,In Progress,26/Jan/26 8:45 AM
+Long Pin Insertion (v1.1),S4P1-11,10055,Bug,In Progress,S4P1,SENG 438 - Project 1 ,software,Josral Frederick,712020:8a1b04dd-1c57-49b8-a118-0fe2641cff3f,,Medium,,,,Josral Frederick,712020:8a1b04dd-1c57-49b8-a118-0fe2641cff3f,Josral Frederick,712020:8a1b04dd-1c57-49b8-a118-0fe2641cff3f,26/Jan/26 4:07 AM,26/Jan/26 9:47 AM,26/Jan/26 9:47 AM,,,0,"Application version 1.1
+
+Function Tested : Pin insertion
+The initial state of the system : system is on and idle
+
+Details to reproduce the defect ; insert card, enter random card number , enter a random long pin (ie 11 or more digits) 
+
+The expected outcome ;  System should disallow user from entering numbers greater than 4 digits 
+
+The actual outcome ;  System crashes, user can not back out. 
+
+!Screenshot 2026-01-26 at 4.08.27 AM.png|width=770,alt=""Screenshot 2026-01-26 at 4.08.27 AM.png""!",,Josral Frederick,712020:8a1b04dd-1c57-49b8-a118-0fe2641cff3f,,,,,,,,,26/Jan/26 4:08 AM;e5a33aac-0694-4644-9842-145dc29fb7c1;Screenshot 2026-01-26 at 4.08.27 AM.png;https://josralfrederick.atlassian.net/rest/api/3/attachment/content/10009,,,com.atlassian.servicedesk.plugins.approvals.internal.customfield.ApprovalsCFValue@5c180665,,,,{},,,,,,,,,,,,0|i00053:,,,,,,,,,,,,,,In Progress,26/Jan/26 8:46 AM
+Test Case 40 : Correct re-entry of PIN on the third try is accepted (v 1.0),S4P1-10,10054,Bug,To Do,S4P1,SENG 438 - Project 1 ,software,Josral Frederick,712020:8a1b04dd-1c57-49b8-a118-0fe2641cff3f,,Medium,,,,Josral Frederick,712020:8a1b04dd-1c57-49b8-a118-0fe2641cff3f,Josral Frederick,712020:8a1b04dd-1c57-49b8-a118-0fe2641cff3f,26/Jan/26 2:55 AM,26/Jan/26 9:16 AM,26/Jan/26 9:16 AM,,,0,"Manual scripted tests
+
+Application version 1.0
+
+MFT
+
+Function Tested : Correct re-entry of PIN on the third try is accepted
+The initial state of the system : Request to re-enter PIN is being displayed
+
+Details to reproduce the defect ; insert card, enter valid card number, enter incorrect pin twice then correct pin on the third attempt
+
+The expected outcome ;  System should automatically accept correct pin on third attempt
+
+The actual outcome ;  System ask for correct pin twice 
+
+
+
+!Screenshot 2026-01-26 at 3.01.00 AM.png|width=833,alt=""Screenshot 2026-01-26 at 3.01.00 AM.png""!",,Josral Frederick,712020:8a1b04dd-1c57-49b8-a118-0fe2641cff3f,,,,,,,,,26/Jan/26 3:02 AM;e5a33aac-0694-4644-9842-145dc29fb7c1;Screenshot 2026-01-26 at 3.01.00 AM.png;https://josralfrederick.atlassian.net/rest/api/3/attachment/content/10006,,,com.atlassian.servicedesk.plugins.approvals.internal.customfield.ApprovalsCFValue@17dfd8ab,,,,{},,,,,,,,,,,,0|i0004v:,,,,,,,,,,,,,,To Do,26/Jan/26 2:55 AM
+Test Case 39 : Correct re-entry of PIN on the second try is accepted (v 1.0) ,S4P1-9,10053,Bug,To Do,S4P1,SENG 438 - Project 1 ,software,Josral Frederick,712020:8a1b04dd-1c57-49b8-a118-0fe2641cff3f,,Medium,,,,Josral Frederick,712020:8a1b04dd-1c57-49b8-a118-0fe2641cff3f,Josral Frederick,712020:8a1b04dd-1c57-49b8-a118-0fe2641cff3f,26/Jan/26 2:55 AM,26/Jan/26 9:05 AM,26/Jan/26 9:16 AM,,,0,"Manual scripted tests
+
+Application version 1.0
+
+MFT
+
+Function Tested : Correct re-entry of PIN on the second try is accepted
+The initial state of the system : Request to re-enter PIN is being displayed
+
+Details to reproduce the defect ; insert card, enter valid card number, enter incorrect pin once then correct pin on the second attempt
+
+The expected outcome ;  System should automatically accept correct pin on second attempt
+
+The actual outcome ;  System ask for correct pin twice 
+
+!Screenshot 2026-01-26 at 3.15.46 AM.png|width=833,alt=""Screenshot 2026-01-26 at 3.15.46 AM.png""!",,Josral Frederick,712020:8a1b04dd-1c57-49b8-a118-0fe2641cff3f,,,,,,,,,26/Jan/26 3:15 AM;e5a33aac-0694-4644-9842-145dc29fb7c1;Screenshot 2026-01-26 at 3.15.46 AM.png;https://josralfrederick.atlassian.net/rest/api/3/attachment/content/10007,,,com.atlassian.servicedesk.plugins.approvals.internal.customfield.ApprovalsCFValue@4f7495ac,,,,{},,,,,,,,,,,,0|i0004n:,,,,,,,,,,,,,,To Do,26/Jan/26 2:55 AM
+Test Case 37: Correct re-entry of PIN is accepted (v 1.0) ,S4P1-8,10052,Bug,To Do,S4P1,SENG 438 - Project 1 ,software,Josral Frederick,712020:8a1b04dd-1c57-49b8-a118-0fe2641cff3f,,Medium,,,,Josral Frederick,712020:8a1b04dd-1c57-49b8-a118-0fe2641cff3f,Josral Frederick,712020:8a1b04dd-1c57-49b8-a118-0fe2641cff3f,26/Jan/26 2:54 AM,26/Jan/26 8:56 AM,26/Jan/26 9:16 AM,,,0,"Manual scripted tests
+
+Application version 1.0
+
+MFT
+
+Function Tested : Correct re-entry of PIN on the first attempt is accepted
+The initial state of the system : Request to re-enter PIN is being displayed
+
+Details to reproduce the defect ; insert card, enter valid card number, enter incorrect pin once then correct pin on the first attempt
+
+The expected outcome ;  System should automatically accept correct pin on first attempt
+
+The actual outcome ;  System ask for correct pin twice 
+
+!Screenshot 2026-01-26 at 3.19.26 AM.png|width=833,alt=""Screenshot 2026-01-26 at 3.19.26 AM.png""!",,Josral Frederick,712020:8a1b04dd-1c57-49b8-a118-0fe2641cff3f,,,,,,,,,26/Jan/26 3:20 AM;e5a33aac-0694-4644-9842-145dc29fb7c1;Screenshot 2026-01-26 at 3.19.26 AM.png;https://josralfrederick.atlassian.net/rest/api/3/attachment/content/10008,,,com.atlassian.servicedesk.plugins.approvals.internal.customfield.ApprovalsCFValue@47f6d580,,,,{},,,,,,,,,,,,0|i0004f:,,,,,,,,,,,,,,To Do,26/Jan/26 2:54 AM
+Card Number Verification (v 1.0) ,S4P1-7,10051,Bug,To Do,S4P1,SENG 438 - Project 1 ,software,Josral Frederick,712020:8a1b04dd-1c57-49b8-a118-0fe2641cff3f,,Medium,,,,Josral Frederick,712020:8a1b04dd-1c57-49b8-a118-0fe2641cff3f,Josral Frederick,712020:8a1b04dd-1c57-49b8-a118-0fe2641cff3f,26/Jan/26 2:24 AM,26/Jan/26 9:29 AM,26/Jan/26 9:29 AM,,,0,"Application version 1.0
+
+Function Tested : Card number verification 
+The initial state of the system : system asking valid credit card number in idle
+
+Details to reproduce the defect ; insert card, enter random card number
+
+The expected outcome ;  System should automatically eject an invalid card 
+
+The actual outcome ;  System automatically asks for pin entry despite having uninitialized card details 
+
+!Screenshot 2026-01-26 at 2.27.52 AM.png|width=833,alt=""Screenshot 2026-01-26 at 2.27.52 AM.png""!",,Josral Frederick,712020:8a1b04dd-1c57-49b8-a118-0fe2641cff3f,,,,,,,,,26/Jan/26 2:28 AM;e5a33aac-0694-4644-9842-145dc29fb7c1;Screenshot 2026-01-26 at 2.27.52 AM.png;https://josralfrederick.atlassian.net/rest/api/3/attachment/content/10005,,,com.atlassian.servicedesk.plugins.approvals.internal.customfield.ApprovalsCFValue@5159ac48,,,,{},,,,,,,,,,,,0|i00047:,,,,,,,,,,,,,,To Do,26/Jan/26 2:24 AM
+Account Transfers (v 1.0),S4P1-6,10050,Bug,To Do,S4P1,SENG 438 - Project 1 ,software,Josral Frederick,712020:8a1b04dd-1c57-49b8-a118-0fe2641cff3f,,Medium,,,,Josral Frederick,712020:8a1b04dd-1c57-49b8-a118-0fe2641cff3f,Josral Frederick,712020:8a1b04dd-1c57-49b8-a118-0fe2641cff3f,26/Jan/26 2:15 AM,26/Jan/26 9:23 AM,26/Jan/26 9:25 AM,,,0,"Application version 1.0
+
+Function Tested : Account Transfers 
+The initial state of the system : system asking for transfer amount in idle
+
+Details to reproduce the defect ; insert card, enter valid card number, enter valid pin, select (3) (transfers), select from (1) (checking), select to (2) savings, select 20$ for the amount, click enter 
+
+The expected outcome ;  System should display a balance increase of 20$ to desired account 
+
+The actual outcome ;  System displays an account balance increase of 19.50$
+
+!Screenshot 2026-01-26 at 2.19.54 AM.png|width=833,alt=""Screenshot 2026-01-26 at 2.19.54 AM.png""!",,Josral Frederick,712020:8a1b04dd-1c57-49b8-a118-0fe2641cff3f,,,,,,,,,26/Jan/26 2:20 AM;e5a33aac-0694-4644-9842-145dc29fb7c1;Screenshot 2026-01-26 at 2.19.54 AM.png;https://josralfrederick.atlassian.net/rest/api/3/attachment/content/10004,,,com.atlassian.servicedesk.plugins.approvals.internal.customfield.ApprovalsCFValue@5c8f310,,,,{},,,,,,,,,,,,0|i0003z:,,,,,,,,,,,,,,To Do,26/Jan/26 2:15 AM
+Unrealistic Deposit Amount (v1.0),S4P1-5,10049,Bug,To Do,S4P1,SENG 438 - Project 1 ,software,Josral Frederick,712020:8a1b04dd-1c57-49b8-a118-0fe2641cff3f,,Medium,,,,Josral Frederick,712020:8a1b04dd-1c57-49b8-a118-0fe2641cff3f,Josral Frederick,712020:8a1b04dd-1c57-49b8-a118-0fe2641cff3f,26/Jan/26 2:07 AM,26/Jan/26 9:23 AM,26/Jan/26 9:23 AM,,,0,"Application version 1.0
+
+Function Tested : Deposit Amount
+The initial state of the system : system asking for deposit amount
+
+Details to reproduce the defect ; insert card, enter valid card number, enter valid pin, select (2) (deposit), select (1) (checking), select a deposit amount ie: any number greater than 10 digits 
+
+The expected outcome ;  System should display a receipts stating a account balance increased by the amount entered 
+
+The actual outcome ;  System crash and unresponsive, user cannot back out (get their money back) 
+
+!Screenshot 2026-01-26 at 2.13.03 AM.png|width=833,alt=""Screenshot 2026-01-26 at 2.13.03 AM.png""!",,Josral Frederick,712020:8a1b04dd-1c57-49b8-a118-0fe2641cff3f,,,,,,,,,26/Jan/26 2:13 AM;e5a33aac-0694-4644-9842-145dc29fb7c1;Screenshot 2026-01-26 at 2.13.03 AM.png;https://josralfrederick.atlassian.net/rest/api/3/attachment/content/10003,,,com.atlassian.servicedesk.plugins.approvals.internal.customfield.ApprovalsCFValue@751f3e93,,,,{},,,,,,,,,,,,0|i0003r:,,,,,,,,,,,,,,To Do,26/Jan/26 2:07 AM
+Deposit Amount (v 1.0),S4P1-4,10048,Bug,To Do,S4P1,SENG 438 - Project 1 ,software,Josral Frederick,712020:8a1b04dd-1c57-49b8-a118-0fe2641cff3f,,Medium,,,,Josral Frederick,712020:8a1b04dd-1c57-49b8-a118-0fe2641cff3f,Josral Frederick,712020:8a1b04dd-1c57-49b8-a118-0fe2641cff3f,26/Jan/26 1:15 AM,26/Jan/26 9:24 AM,26/Jan/26 9:23 AM,,,0,"!Screenshot 2026-01-26 at 1.58.55 AM.png|width=833,alt=""Screenshot 2026-01-26 at 1.58.55 AM.png""!
+
+
+
+Application version 1.0
+
+Function Tested : Deposit Amount
+The initial state of the system : system asking for deposit amount
+
+Details to reproduce the defect ; insert card, enter valid card number, enter valid pin, select (2) (deposit), select (1) (checking), select 20$ for the amount, Click to insert envelope
+
+The expected outcome ;  System should display a receipts stating a account balance increase of 20$
+
+The actual outcome ;  System displays an account balance increase of 10$",,Josral Frederick,712020:8a1b04dd-1c57-49b8-a118-0fe2641cff3f,,,,,,,,,26/Jan/26 1:59 AM;e5a33aac-0694-4644-9842-145dc29fb7c1;Screenshot 2026-01-26 at 1.58.55 AM.png;https://josralfrederick.atlassian.net/rest/api/3/attachment/content/10002,,,com.atlassian.servicedesk.plugins.approvals.internal.customfield.ApprovalsCFValue@2278ced9,,,,{},,,,,,,,,,,,0|i0003j:,,,,,,,,,,,,,,To Do,26/Jan/26 1:15 AM
+Long Pin Insertion (v1.0),S4P1-2,10046,Bug,To Do,S4P1,SENG 438 - Project 1 ,software,Josral Frederick,712020:8a1b04dd-1c57-49b8-a118-0fe2641cff3f,,Medium,,,,Josral Frederick,712020:8a1b04dd-1c57-49b8-a118-0fe2641cff3f,Josral Frederick,712020:8a1b04dd-1c57-49b8-a118-0fe2641cff3f,25/Jan/26 10:37 PM,26/Jan/26 9:24 AM,26/Jan/26 9:24 AM,,,0,"Application version 1.0 
+
+Function Tested : Pin insertion
+The initial state of the system : system is on and idle
+
+Details to reproduce the defect ; insert card, enter random card number , enter a random long pin (ie 11 or more digits) 
+
+The expected outcome ;  System should disallow user from entering numbers greater than 4 digits 
+
+The actual outcome ;  System crashes, user can not back out. 
+
+!Screenshot 2026-01-25 at 10.22.20 PM.png|width=371,alt=""Screenshot 2026-01-25 at 10.22.20 PM.png""!",,Josral Frederick,712020:8a1b04dd-1c57-49b8-a118-0fe2641cff3f,,,,,,,,,25/Jan/26 10:43 PM;e5a33aac-0694-4644-9842-145dc29fb7c1;Screenshot 2026-01-25 at 10.22.20 PM.png;https://josralfrederick.atlassian.net/rest/api/3/attachment/content/10001,,,com.atlassian.servicedesk.plugins.approvals.internal.customfield.ApprovalsCFValue@50a78ca3,,,,{},,,,,,,,,,,,0|i00033:,,,,,,,,,,,,,,To Do,25/Jan/26 10:37 PM
+Pin insertion (v.1.0),S4P1-1,10045,Bug,To Do,S4P1,SENG 438 - Project 1 ,software,Josral Frederick,712020:8a1b04dd-1c57-49b8-a118-0fe2641cff3f,,Medium,,,,Josral Frederick,712020:8a1b04dd-1c57-49b8-a118-0fe2641cff3f,Josral Frederick,712020:8a1b04dd-1c57-49b8-a118-0fe2641cff3f,25/Jan/26 10:00 PM,26/Jan/26 9:46 AM,26/Jan/26 9:46 AM,,,0,"!Screenshot 2026-01-25 at 10.19.25 PM.png|width=405,alt=""Screenshot 2026-01-25 at 10.19.25 PM.png""!
+
+Application version 1.0
+
+Function Tested : Pin insertion
+The initial state of the system : system is on and idle
+
+Details to reproduce the defect ; insert card, enter correct card number , enter a pin with digits exceeding 4. 
+
+The expected outcome ;  System should disallow user from entering numbers greater than 4 digits 
+
+The actual outcome ;  System allows for pin of up to 22 digits long ",,Josral Frederick,712020:8a1b04dd-1c57-49b8-a118-0fe2641cff3f,,,,,,,,,25/Jan/26 10:19 PM;e5a33aac-0694-4644-9842-145dc29fb7c1;Screenshot 2026-01-25 at 10.19.25 PM.png;https://josralfrederick.atlassian.net/rest/api/3/attachment/content/10000,,,com.atlassian.servicedesk.plugins.approvals.internal.customfield.ApprovalsCFValue@355a325c,,,,{},,,,,,,,,,,,0|i0002v:,,,,,,,,,,,,,,To Do,25/Jan/26 10:00 PM
