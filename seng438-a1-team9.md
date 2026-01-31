@@ -1,6 +1,5 @@
->   **SENG 438 - Software Testing, Reliability, and Quality**
-
-**Lab. Report \#1 – Introduction to Testing and Defect Tracking**
+# SENG 438 - Software Testing, Reliability, and Quality
+## Lab Report \#1 – Introduction to Testing and Defect Tracking
 
 | Group: 9      |
 |-----------------|
@@ -11,327 +10,80 @@
 | Erioluwa Olubadejo                |  
 
 
-**Table of Contents**
+# Table of Contents
 
-(When you finish writing, update the following list using right click, then
-“Update Field”)
+- [Introduction](#introduction)
+- [High-level description of the exploratory testing plan](#high-level-description-of-the-exploratory-testing-plan)
+- [Comparison of exploratory and manual functional testing](#comparison-of-exploratory-and-manual-functional-testing)
+- [Notes and discussion of the peer reviews of defect reports](#notes-and-discussion-of-the-peer-reviews-of-defect-reports)
+- [How the pair testing was managed and team work/effort was divided](#how-the-pair-testing-was-managed-and-team-work-effort-was-divided)
+- [Difficulties encountered, challenges overcome, and lessons learned](#difficulties-encountered-challenges-overcome-and-lessons-learned)
+- [Comments/feedback on the lab and lab document itself](#commentsfeedback-on-the-lab-and-lab-document-itself)
 
-[1 Introduction	1](#_Toc439194677)
+# Introduction
+
 In this lab, the objective was to build experience with software testing and defect tracking using an ATM application simulator. Prior to this lab, our understanding of testing was primarily centered around manual functional testing, where we follow a set standard of predefined test cases and verify that the actual behaviour matches the expected behaviour. As a result, our hands on experience with exploratory testing, in terms of designing test ideas in real time and using requirements to intentionally test edge cases, was limited.
 
 Through this lab assignment, we as a group practiced three testing approaches. Exploratory testing to discover defects through guided experiments, manual scripted testing using the Appendix C test suite to systematically verify expected behaviour, and regression testing by rerunning previously reported issues through version 1.1 to determine which defects were resolved and which were still present. We also gained experience documenting these bugs using Jira, focusing on reproducibility, expected vs. actual outcomes, and version tracking.
 
+# High-level description of the exploratory testing plan
 
-[2 High-level description of the exploratory testing plan	1](#_Toc439194678)
-Our exploratory testing was guided by the high level requirements in Appendix B. We focused on validating core requirements:
-- Withdrawals are dispensed in multiples of 20.
-- Invalid PIN handling, including reentry and card retention after failing three times.
-- Cancel should abort a transaction at many stages and return the user to a safe state.
-- Deposits must require envelope insertion and should not be credited if the envelope step is skipped.
-- The ATM must not shut down during an active session.
-- A receipt must print after a transaction.
-- Logs should record activity without including PIN values.
+Based on the requirements outlined in Appendix B, our exploratory testing focused on verifying core ATM functionalities such as authentication, withdrawals, deposits, transfers, balance inquiries, and system control operations. We aimed to broadly test most system features rather than overly testing a single function. Our test scenarios were derived from both normal user flows, like valid login followed by a withdrawal or deposit, and exceptional cases, such as invalid PIN entries, insufficient account balance, canceling transactions at various stages, and attempting invalid withdrawal amounts. Boundary conditions such as withdrawing the maximum available cash, performing multiple transactions in one session, and system shutdown behavior were also explored. Testing was conducted randomly to allow unexpected behaviors and defects to be discovered naturally.
 
-During exploration, we also checked common input validation such as an unusually long PIN input or an unrealistic cash amount, to ensure the system fails rather than freezing or crashing.
-
-Our approach consisted of a broad coverage strategy. We tested major features such as authentication, withdrawal, deposit, transfer, inquiry, cancel behaviour, and system start/stop, rather than exhaustively testing one feature, using both of the following:
-- Normal user flows: valid login, transaction, receipt, end session.
-- Exceptional and boundary cases: invalid inputs, extreme values, invalid accounts, insufficient funds, and canceling during a transaction.
-
-We generated test cases by combining:
-- Good path scenarios to confirm baseline functionality.
-- Edge cases that usually reveal defects: very large inputs, unusual PIN lengths, invalid cards, and verifying money movement accuracy.
-
-The major exploratory scenarios we executed were as follows:
-1. Invalid card input: non numerical values were rejected appropriately, and many random numbers were handled; however, some cases led to unstable states.
-2. Invalid PIN entries: standard incorrect PIN attempts behaved as expected when completed in normal ranges.
-3. Withdrawal amount coherence with selected option: some withdrawal processes worked; however, we also observed cases where the selected amount did not match the amount that was dispensed.
-4. Withdrawal deduction accuracy: we observed inconsistent behaviour where the balance changed correctly, but the dispensed/selected amounts did not correlate as expected.
-5. Withdrawing from an unavailable account: for example, Money Market on card 1 and Savings on card 2. The system behaved correctly and prevented invalid account usage.
-6. Withdrawing an amount larger than the account’s balance: the system displayed an appropriate message and prevented the withdrawal, working as expected.
-7. Deposit accuracy in updating balance: we observed incorrect balance math, where deposits appeared to update inconsistently and could be off by $10 compared to the amount entered.
-8. An unrealistic deposit amount: entering an extreme deposit amount caused a frozen blank screen, making the system unstable.
-9. Transfer accuracy between accounts: transfers showed incorrect accounting. The amount was $0.50 less than the value entered.
-10. Transfer from an unavailable account to an available one: the system prevented invalid account usage and behaved as expected.
-
-
-
-We came across several bugs during exploratory testing for version 1.0:
-1. The system accepts an unreasonably long PIN input (22 digits), which raises concerns about the application’s security and validation.
-2. Using a random card number with a very long PIN can lead to a blank green screen, and the program freezes.
-3. Withdrawal amount mismatch: selecting $20 can result in $40 being dispensed.
-4. Deposit amount mismatch: entering $20 may only increase the user’s balance by $10.
-5. Entering a very large deposit number freezes the system.
-6. Transfer mismatch: transferring $20 from Checking to Savings results in $19.50 being transferred.
-
-
-After repeating the important checks on version 1.1, we observed some fixes and some remaining issues. Some of the discoveries we made were as follows:
-- Transferring accuracy appeared fixed in version 1.1.
--Unstable PIN behaviour still appeared unfixed.
-- An unrealistic deposit amount still appeared to not be fixed.
-- The logic error with deposits persisted in version 1.1.
-
-
-
-[3 Comparison of exploratory and manual functional testing	1](#_Toc439194679)
-Both exploratory testing and manual scripted testing helped us evaluate the ATM simulation, but they differed in how test cases were produced, the predictability of a process, and the kinds of defects each method revealed.
-
-In exploratory testing, we created and executed tests dynamically based on the requirements listed in the Appendix, as well as our observations of the system. This allowed us to quickly branch into fresh scenarios when an unexpected event occurred, such as unrealistic deposit amounts after noticing input validation weaknesses.
-
-In manual functional testing, we followed a predefined test case set listed in Appendix C, each with clear starting states, inputs, and the results our system expects. This made the execution more systematic to repeat on a consistent basis.
-
-Exploratory testing was effective at revealing defects related to input validation and edge cases, such as:
-
-- System freezing after an unrealistic deposit amount
-- Unstable behaviour after unusual authentication inputs, like a random card or very long PIN
-- Incorrect money movement, such as incorrect transfer/withdraw/deposit amounts
-
-Manual functional testing, we found, was effective at validating expected behaviours for the standard use cases, and it also revealed failures that are tied directly to specified requirements. We noticed this in test case #6, where rejecting an unreadable card failed when a non-existent card was still accepted and prompted for a PIN, which contradicts the expected behaviour of our system to immediately reject.
-
-Manual scripted testing was more efficient for verifying baseline correctness across multiple features because the steps were already set, and expected outputs are absolute. Alongside, it also improved repeatability because two testers can run the same test and reach the same conclusion about a pass or a fail. Exploratory testing required more judgement and more note taking. This is due to test cases not being predetermined. However, it was efficient for uncovering higher-impact defects that wouldn’t necessarily be covered by the scripted suite.
-
-When considering coverage and limitations, exploratory testing provided stronger coverage of unknown unknowns, however, it can be inconsistent between testers unless the steps are carefully documented upon discovery. Manual functional testing provided dependable coverage for the encoded Appendix C requirements; however, it is limited to what the script contains. For instance, the scripted test suite doesn’t deeply advocate extremely large numeric inputs; exploratory testing revealed there to be bugs in those areas.
-
-As seen, some bugs were experienced in both approaches. For example, transaction accuracy issues that arose during exploration were also reflected in scripted outcomes. This overlap provided aid in confirming that certain bugs were not solo edge cases, but could also appear during more structured testing.
-
-Overall, exploratory testing was more valuable for the discovery of unexpected failures and issues in validation, whereas manual functional testing was strongest for consistent requirement verification and repeatable pass or fail reporting.
-
-
-[4 Notes and discussion of the peer reviews of defect reports	1](#_Toc439194680)
-
-[5 How the pair testing was managed and team work/effort was
-divided	1](#_Toc439194681)
-
-[6 Difficulties encountered, challenges overcome, and lessons
-learned	1](#_Toc439194682)
-
-[7 Comments/feedback on the lab and lab document itself	1](#_Toc439194683)
-
-# Introduction
-
-In this lab, the primary focus is to get an idea of what software testing is. Software testing is a critical practice used in software development, as it helps to ensure that systems behave as expected and meet their requirements. Before this lab, our understanding of testing was mainly focused on the idea of verifying correctness through pre defined test cases. However, this lab provided a hands-on experience with multiple testing styles. This includes exploratory testing, manual scripted testing and regression testing by using a simulated ATM system.
-
-# High-level description of the exploratory testing plan card 1
-
-Requirements based on Appendix B: (this is version 1.0)
-- Withdrawals must be in multiples of $20 - will not allow decimals, must be and integer
-- Cancel should work at many stages - works
-- 3 wrong PINs → card retained - will display "card has been retained" and reprompt to insert card
-- Deposit requires envelope insertion - It works.
-- Deposit is not credited if envelope isn’t inserted - It works.
-- ATM must not shut down during a customer session - it has not shut down so far.
-- Receipt must be printed for successful transactions - Yes, it does that.
-- ATM logs actions (no PINs in logs) - No pins in logs
-- 4 number PIN - actually allows 22 numbers - DEFECT
-- No letters in card number - working
-- Entering PIN - Will display a blank green page when using random card number, and a long PIN. blank screen, cant go back, cant clear - DEFECT
-
-1. Inserting a false card (entering non-numerical values or random numbers) - Both work
-2. Entering an random/incorrect PINs - Theres no defect when done right..
-3. Checking to see if the chosen withdraw amount the same as the actual amount - IT works
-4. Checking to see if the chosen withdraw amount is the amount deducted from the account - DEFECT - It takes back the correct amount from the balance, but the numbers don't correlate with the ones that are put in.
-5. Trying to withdraw money from a unavailable account (Money Market for Card 1 and Savings for Card 2)  - It works
-6. Trying to withdraw more money than you have in the account - it works
-7. Checking to see if the chosen deposit amount is accurately reflected in the balance -DEFECT -  it only deposits into the total balance but not the available, also the math is wrong, its always $10 less than what you put.
-8. Checking to see what happens if an unrealistic deposit amount is entered -DEFECT -  Blank screen appears and the whole system crashes. 
-9. Checking to see if the amount transferred from one account to another is accurate - DEFECT -  it's not accurate, it always takes $.50 less than what you put in.
-10. Checking to see if you could transfer money from an unavailable account to an available account - it works 
-
-High-level plan:
-Based on the requirements outlined in Appendix B, our exploratory testing focused on verifying core ATM functionalities such as authentication, withdrawals, deposits, transfers, balance inquiries, and system control operations. We aimed to broadly test most system features rather than exhaustively testing a single function. Test scenarios were derived from both normal user flows (e.g., valid login followed by a withdrawal or deposit) and exceptional cases (e.g., invalid PIN entries, insufficient account balance, canceling transactions at various stages, and attempting invalid withdrawal amounts). Boundary conditions such as withdrawing the maximum available cash, performing multiple transactions in one session, and system shutdown behavior were also explored. Testing was conducted without predefined scripts to allow unexpected behaviors and defects to be discovered naturally.
-
-version 1.1: 
-1. ATM should reject insufficient funds - defect solved
-2. 4 number PIN - DEFECT in progress
-3. Entering PIN - Will display a blank green page when using random card number, and a long PIN. blank screen, cant go back, cant clear - DEFECT IN PROGRESS
-4.Checking to see if the chosen withdraw amount is the amount deducted from the account- DEFECT RESOLVED
-5.Checking to see if the chosen deposit amount is accurately reflected in the balance  - DEFECT IN PROGRSS (.10 less in savings and checking)
-6.Checking to see what happens if a unrealistic deposit amount is entered - DEFECT IN PROGRESS
-7.Checking to see if the amount transferred from one account to another is accurate - SOLVED
-
-# card 2
-version 1.0:
-
-version 1.1: 
-- it works
-- 3 wrong PINs → card retained - will display "card has been retained" and reprompt to insert card
-- Deposit requires envelope insertion - It works.
-- Deposit is not credited if envelope isn’t inserted - It works.
-- ATM must not shut down during a customer session - it has not shut down so far.
-- Receipt must be printed for successful transactions - Yes, it does that.
-- 4 number PIN - system crashes if it's too much numbers
-- No letters in card number - DEFECT allows letters
-- Entering PIN - Will display a blank green page when using random card number, and a long PIN. blank screen, cant go back, cant clear - DEFECT
- 
-
-
-
-
-
-
-
-
+In summary, our approach focused on maximizing coverage of both standard and exceptional scenarios, ensuring that the ATM system behaves correctly under typical use while also handling edge cases robustly. This approach also provided valuable input for regression testing and defect tracking in Jira
 
 # Comparison of exploratory and manual functional testing
-Manual functional test case #: (this is version 1.0)
-1. it works
-2. it works
-3. it works
-4. it works
-5. it works
-6. DEFECT, because tested card 80 is asking for PIN, and not ejecting card right away. (100 is accepted 7987498729 is not.)
-7. it works
-8. it works (some transaction are not correct but it still does the transaction)
-9. it works
-10. it works
-11. it works (says PIN is incorrect)
-12. it works
-13. it works 
-14. DEFECT (repeated from earlier where you enter $20 and its $40)
-15. it works
-16. 
-17. it works
-18. it works
-19.it works
-20. it works
-21. it works 
-22. it works
-23. it works 
-24. it works 
-25. it works 
-26. it works
-27. it works
-28. it works
-29. DEFECT (same as earlier, it adds .38 to original amount but everything else is good)
-30.it works
-31. it works
-32. it works
-33. it works
-34. it works 
-35. it works
-36. it works
-37. MNI DEFECT (prompts user twice, ask if it counts as defect)
-38. it works 
-39. MINI DEFECT (promt twice)
-40. MINI DEFECT (same as 39)
+Both exploratory testing and manual scripted testing helped us evaluate the ATM simulation, but they differed in how test cases were produced, the predictability of a process, and the kinds of defects each method revealed.
+In exploratory testing, we created and ran tests on the spot, using the requirements in Appendix B and our observations to guide us. This meant we could quickly try new scenarios when something unexpected happened, like a very large deposit amount or an unusual PIN entry. Exploratory testing was especially useful for catching issues that weren’t part of the standard scripts, such as:
 
-# Manual Function: version 1.1
-1. it works
-2. it works
-3. it works
-4. it works
-5. it works
-6. DEFECT (same reason as last, ask in class)
-7. it works
-8. it works 
-9. it works
-10. it works
-11. it works
-12. it works 
-13. it works
-14. it works 
-15. it works
-16. 
-17. it works
-18. it works 
-19. it works 
-20. it works
-21. it works
-22. it works
-23. it works
-24. it works
-25. it works
-26. it works
-27. it works
-28. it works
-29. it works
-30. it works
-31. it works
-32. it works 
-33. it works
-34. it works 
-35. it works
-36. it works 
-37. MINI DEFECT (prompts user twice, ask if it counts as defect)
-38. it works 
-39. MINI DEFECT
-40. MINI DEFECT
+- System freezing or crashing when unrealistic deposit amounts were entered
+- Instability when using very long PINs or random card numbers
+- Incorrect money movement during withdrawals, deposits, or transfers
 
--   Note that you need to submit a report generated by your defect tracking
-    system, containing all defects recorded in the system.
+In manual functional testing, we followed the test cases in Appendix C step by step. Everything had clear starting points, inputs, and expected results, which made testing predictable and repeatable. This approach was great for confirming that the ATM behaved correctly under normal conditions, such as:
 
-# card 2
+- Rejecting unreadable or invalid cards
+- Handling incorrect PIN entries and retaining the card after three failed attempts
+- Generating receipts and updating balances accurately
 
-version 1.0: 
+Some defects, like transaction accuracy issues, appeared in both testing approaches, confirming they were genuine problems rather than isolated edge cases. Exploratory testing excelled at uncovering unexpected issues and edge cases, though it required careful documentation to maintain reproducibility. Manual functional testing, on the other hand, provided consistent verification of the system against specified requirements. Using both methods together gave the most complete picture: exploratory testing revealed new problems, while manual testing ensured baseline functionality was correct.
 
-version 1.1: 
- 1. it works 
- 2. it works 
- 3. it works
- 4. it works 
- 5.it works 
- 6. it works
- 7.DEFECT, I put the wrong pin first, then i put the right one and it only worked after 2 tries.
- 8. it works
- 9.it works
- 10. it works
- 11. mini defect
- 12.it works
- 13.it works
- 14. it works
- 15.it works 
- 16. it works 
- 17.it works 
- 18.it works
- 19.it works
- 20.Defect, it says to enter valid account
- 21.defect
- 22.defect
- 23.it works
- 24.it works
- 25.it works
- 25.it works
- 26.it works
- 27.it works
- 28.defect, it says invalid account type
- 29.defect
- 30.it works
- 31.it works
- 32.it works
- 33.it works
- 34.it works
- 35. it works
- 36.mini defect, works after second try
- 37.mini defect
- 38.mini defect
- 39. is accepted
- 40.works
-
- 
-
+Overall, exploratory testing helped us discover unexpected failures and validate system robustness, while manual scripted testing confirmed the system met all the expected requirements. Together, they gave us confidence that we thoroughly tested the ATM application.
 
 # Notes and discussion of the peer reviews of defect reports
 
-During the peer review process, each pair(one group of two & one group of three) evaluated another group’s defect report and provided structured feedback. The reviews focused on clarity, completeness, reproducibility of defects, and adherence to the defect report template. One key discussion point was the importance of clearly defined steps to reproduce a defect, as several reports initially lacked sufficient detail to consistently trigger the issue. 
-We also discussed how well each report distinguished between expected and actual behavior, noting that stronger reports made this distinction explicit and concise. 
-Through discussion, we compared approaches to severity and priority classification and aligned on a more consistent interpretation across the group. Overall, the peer review process helped identify common weaknesses and reinforced best practices for writing high-quality, actionable defect reports.
+During the peer review process, our group collectively examined all entries and defect reports in Jira. We noticed that some entries did not enough detail regarding the initial state of the system, the exact inputs required to reproduce the error, or clear descriptions of the observed behaviour. In certain cases, a single defect could have been broken down into multiple issues due to overlapping functionalities or complexity, which highlighted the need for careful organization when reporting bugs.
+
+Through the review, we also observed that some functionalities could still fail under exploratory testing scenarios even though they were passing in the manual function tests. For example, transfer and deposit features sometimes behaved unexpectedly when tested with extreme inputs, which would not have been caught by strictly scripted tests. This reinforced the value of pairing exploratory testing with the structured manual test suite to ensure coverage of both expected and edge-case behaviours.
+
+Additionally, we found that simply trying to "break" the ATM during testing was highly effective for uncovering hidden defects, such as the system freezing after entering unrealistically large deposit amounts. These issues were not immediately apparent in the MFT and demonstrate the importance of simulating realistic misuse scenarios. Overall, while most entries were well-documented and informative, the peer review process helped us refine descriptions, ensure reproducibility, and confirm whether issues persisted in version 1.1. This collaborative review strengthened both the quality of our reports and our understanding of how defects impact system functionality.
 
 # How the pair testing was managed and team work/effort was divided 
+Pair 1: Fatma & Amielle
+- Fatma executed edge cases and non-standard scenarios.
+- Amielle recorded results, including steps, expected outcomes, and actual outcomes.
 
-- Fatma and Amielle were assigned to work on the first pair testing for Appendix B. Fatma was testing the different scenerios that would not work and Amielle would do the recording.
-- In addition to the contributions from Fatma and Amielle, the rest of the team played key roles in the testing and defect reporting process. Josral, Erioluwa & Faris focused on manual functional testing, each taking responsibility for different aspects of the software. Josral handled testing the core functions, while Erioluwa concentrated on the user interface components. Their collaboration ensured that all test cases were executed thoroughly and consistently.
-- Faris, on the other hand, was responsible for managing the test environment. He made sure that all testing tools were properly set up and that the test environment was free from external interference, such as outdated software or misconfigurations. This allowed the team to focus entirely on testing the product without technical disruptions.
-- After the peer review , Fatma and Amielle took the feedback from everyone and worked together to refine the defect reports, improving both clarity and detail. This collective effort ensured that each defect was not only identified but also thoroughly documented, with clear solutions that could be easily implemented in future iterations.
+Pair 2: Josral, Faris & Erioluwa
+- Focused on normal user flows, withdrawals, deposits, and transfers.
+- Team members rotated between testing and noting bugs in Jira to balance workload.
 
-
-# Difficulties encountered, challenges overcome, and lessons learned
-Difficulties encountered included discrepancies between the expected outcomes and the actual behavior of some test scenarios. These issues proved to be quite challenging because the team had to revisit the test case structure to figure out what went wrong. Ensuring that all prerequisites and environmental variables were accounted for added an extra layer of complexity, causing some delays during the initial testing phase.
-Another significant challenge was ensuring that the defect reports were both accurate and detailed. In the beginning, some reports were missing important context, making it unclear why a defect occurred or how to fix it. Through collaboration and continuous feedback, the team worked together to refine their approach, adding more details to the reports so that future teams could easily understand and replicate the errors and their solutions.
-One of the key lessons learned was the importance of time management. While the team was able to meet the deadlines, they realized that they could have split their testing workload more efficiently if they had better anticipated the complexity of certain test cases. In hindsight, they agreed that future tasks should be planned more carefully, with specific time allocations to account for potential setbacks during testing.
-A critical lesson was the value of thorough documentation. As the team worked through the defect reporting, they came to understand that detailed documentation particularly regarding the test scenarios was essential. This not only helped the current project but also ensured that the team would have a well documented reference for troubleshooting and resolving issues quickly in the future.
+Regression Testing: Each member re-tested their previous exploratory and MFT scenarios on version 1.1 to identify resolved and remaining defects.
 
 # Difficulties encountered, challenges overcome, and lessons learned
+
+Challenges:
+- Working with Jira for the first time.
+- Documenting steps clearly enough to reproduce defects consistently.
+- Managing overlapping defects across testers to avoid duplicate Jira entries.
+- Handling unexpected system freezes during exploratory testing.
+
+Lessons Learned:
+- Explicit task assignment improves team efficiency.
+- Exploratory testing is very important for finding edge-case defects.
+- Maintaining consistent Jira fields ensures accurate regression testing.
+- Understanding requirements before testing saves significant effort.
+
 # Comments/feedback on the lab and lab document itself
-Overall, the lab was a useful and practical exercise that reinforced real-world software testing and quality assurance practices. The lab document was generally clear and well-structured, making it easy to follow the required steps. The peer review component was particularly valuable, as it encouraged critical thinking and exposed us to different reporting styles.
+The lab provided a realistic introduction to software testing and defect tracking using industry-standard tools like Jira. Using both exploratory and manual testing provided a comprehensive view of system behaviour. We all feel that we will be using the knowledge from this lab in other courses and in our future experiences.
 
-One possible improvement would be to include a sample defect report or rubric for better ease in understanding the content, as it took a while to fully understand the objectives and how to meet theme. Despite this, the lab provided meaningful hand- experience and effectively met its learning objectives.
+The documentation was clear, but clearer instructions for regression testing would further improve efficiency. The markdown format worked well for organizing content but limited more dynamic formatting.
